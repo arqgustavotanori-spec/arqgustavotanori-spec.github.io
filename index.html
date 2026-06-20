@@ -1,1 +1,603 @@
-Hola desde PUERTO
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grill Daddy | Premium Villa & Private Event BBQ Catering | Puerto Escondido</title>
+
+<meta name="description" content="Luxury grill catering for villas, private chefs, weddings, birthdays, and events in Puerto Escondido. We bring the fire, premium ingredients, and unforgettable experience.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg:#0b0b0b;
+    --card:#121212;
+    --gold:#d9a441;
+    --gold-light:#f2c36d;
+    --white:#ffffff;
+    --muted:#a5a5a5;
+    --border:rgba(255,255,255,.08);
+    --radius:24px;
+    --shadow:0 30px 80px rgba(0,0,0,.45);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+.container{
+    width:min(1200px,92%);
+    margin:auto;
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    backdrop-filter:blur(18px);
+    background:rgba(10,10,10,.75);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.nav-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:800;
+    letter-spacing:-0.04em;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav-cta{
+    text-decoration:none;
+    color:#000;
+    background:var(--gold);
+    padding:12px 20px;
+    border-radius:999px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.nav-cta:hover{
+    transform:translateY(-2px);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.75)
+    ),
+    url('/images/hero.jpg');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:800px;
+}
+
+.badge{
+    display:inline-flex;
+    gap:10px;
+    align-items:center;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
+    padding:10px 16px;
+    border-radius:999px;
+    margin-bottom:24px;
+    font-size:.9rem;
+}
+
+.hero h1{
+    font-size:clamp(3rem,7vw,6rem);
+    line-height:.95;
+    letter-spacing:-0.05em;
+    margin-bottom:24px;
+}
+
+.hero h1 span{
+    color:var(--gold);
+}
+
+.hero p{
+    font-size:1.25rem;
+    color:#d0d0d0;
+    line-height:1.7;
+    max-width:700px;
+}
+
+.hero-actions{
+    display:flex;
+    gap:16px;
+    margin-top:36px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:16px 28px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--gold);
+    color:#000;
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.15);
+    color:#fff;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:110px 0;
+}
+
+.section-title{
+    font-size:clamp(2rem,5vw,4rem);
+    line-height:1;
+    letter-spacing:-0.04em;
+    margin-bottom:20px;
+}
+
+.section-subtitle{
+    color:var(--muted);
+    max-width:700px;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+/* FEATURES */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:60px;
+}
+
+.card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:32px;
+}
+
+.card h3{
+    margin-bottom:14px;
+    font-size:1.3rem;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+/* EXPERIENCE */
+
+.experience{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.experience img{
+    width:100%;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.experience ul{
+    list-style:none;
+    margin-top:28px;
+}
+
+.experience li{
+    padding:16px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    color:#d8d8d8;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-top:50px;
+}
+
+.gallery img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:20px;
+}
+
+/* MENU */
+
+.menu-wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.menu-wrap img{
+    width:100%;
+    border-radius:24px;
+    box-shadow:var(--shadow);
+}
+
+.menu-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    padding:40px;
+    border-radius:24px;
+}
+
+.menu-card h3{
+    font-size:2rem;
+    margin-bottom:16px;
+}
+
+.menu-card p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:120px 0;
+}
+
+.cta-box{
+    background:linear-gradient(135deg,#151515,#1f1f1f);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:32px;
+    padding:70px 30px;
+}
+
+.cta h2{
+    font-size:clamp(2.5rem,5vw,4.5rem);
+    line-height:1;
+    letter-spacing:-0.04em;
+    margin-bottom:20px;
+}
+
+.cta p{
+    color:var(--muted);
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.06);
+    padding:40px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-inner p{
+    color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.features{
+    grid-template-columns:1fr;
+}
+
+.experience,
+.menu-wrap{
+    grid-template-columns:1fr;
+}
+
+.gallery{
+    grid-template-columns:1fr 1fr;
+}
+
+.hero{
+    padding-top:120px;
+}
+
+.hero-actions{
+    flex-direction:column;
+}
+
+.btn{
+    width:100%;
+}
+
+.footer-inner{
+    flex-direction:column;
+    text-align:center;
+}
+}
+
+@media(max-width:600px){
+
+.gallery{
+    grid-template-columns:1fr;
+}
+
+.hero h1{
+    font-size:3.5rem;
+}
+
+.section-title{
+    font-size:2.3rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container nav-inner">
+        <div class="logo">GRILL <span>DADDY</span></div>
+
+        <a href="#book" class="nav-cta">
+            Book Your Event
+        </a>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container hero-content">
+
+        <div class="badge">
+            🔥 Puerto Escondido Premium Grill Catering
+        </div>
+
+        <h1>
+            We Bring The Fire.<br>
+            You Enjoy The <span>Party.</span>
+        </h1>
+
+        <p>
+            Luxury grill catering for villas, birthdays, bachelor parties,
+            weddings, family gatherings, retreats, and private events in
+            Puerto Escondido. Grill Daddy transforms your location into an
+            unforgettable live-fire dining experience.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#book" class="btn btn-primary">
+                Get a Quote
+            </a>
+
+            <a href="#menu" class="btn btn-secondary">
+                View Menu
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<section>
+    <div class="container">
+
+        <h2 class="section-title">
+            More Than Catering.
+        </h2>
+
+        <p class="section-subtitle">
+            We arrive at your villa or event location with everything needed
+            for an elevated live-fire experience. Premium ingredients,
+            professional service, beautiful presentation, zero stress.
+        </p>
+
+        <div class="features">
+
+            <div class="card">
+                <h3>🔥 Live Grill Experience</h3>
+                <p>
+                    Guests enjoy the atmosphere, aroma, and excitement of food
+                    prepared fresh over fire.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🥩 Premium Ingredients</h3>
+                <p>
+                    High-quality meats, seafood, vegetables, and house-made
+                    sides selected for exceptional flavor.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🏝 Villa & Event Specialists</h3>
+                <p>
+                    Perfect for luxury villas, weddings, birthdays, retreats,
+                    celebrations, and private gatherings.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <div class="container experience">
+
+        <div>
+            <h2 class="section-title">
+                The Grill Daddy Experience
+            </h2>
+
+            <p class="section-subtitle">
+                You choose the location. We bring the grill, ingredients,
+                setup, cooking, service, and cleanup.
+            </p>
+
+            <ul>
+                <li>✓ Complete setup and preparation</li>
+                <li>✓ Professional on-site grilling</li>
+                <li>✓ Premium presentation</li>
+                <li>✓ Perfect for groups of all sizes</li>
+                <li>✓ No cleanup required</li>
+            </ul>
+        </div>
+
+        <img src="/images/food-1.jpg" alt="Premium grilled food">
+
+    </div>
+</section>
+
+<section>
+    <div class="container">
+
+        <h2 class="section-title">
+            Food That Gets People Talking
+        </h2>
+
+        <div class="gallery">
+            <img src="/images/food-1.jpg" alt="">
+            <img src="/images/food-2.jpg" alt="">
+            <img src="/images/food-3.jpg" alt="">
+            <img src="/images/food-4.jpg" alt="">
+        </div>
+
+    </div>
+</section>
+
+<section id="menu">
+    <div class="container menu-wrap">
+
+        <img src="/images/menu.jpg" alt="Grill Daddy Menu">
+
+        <div class="menu-card">
+            <h3>Explore Our Menu</h3>
+
+            <p>
+                From premium steaks and seafood to signature sides and
+                crowd-favorite grill selections, every menu is designed to
+                create a memorable experience.
+            </p>
+
+            <a href="/images/menu.jpg" target="_blank" class="btn btn-primary">
+                View Full Menu
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<section class="cta" id="book">
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Ready To Host An<br>
+                Unforgettable Event?
+            </h2>
+
+            <p>
+                Tell us your date, location, and guest count.
+                We'll create a premium grill experience tailored to your event.
+            </p>
+
+            <div style="margin-top:40px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+
+                <!-- CHANGE THESE -->
+                <a href="https://wa.me/521234567890" class="btn btn-primary">
+                    WhatsApp Us
+                </a>
+
+                <a href="mailto:hello@grilldaddy.mx" class="btn btn-secondary">
+                    Email Inquiry
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-inner">
+
+        <div class="logo">
+            GRILL <span>DADDY</span>
+        </div>
+
+        <p>
+            Premium Grill Catering • Puerto Escondido, Oaxaca
+        </p>
+
+    </div>
+</footer>
+
+</body>
+</html>
