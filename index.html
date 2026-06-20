@@ -3,23 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grill Daddy | Premium Villa & Private Event BBQ Catering | Puerto Escondido</title>
 
-<meta name="description" content="Luxury grill catering for villas, private chefs, weddings, birthdays, and events in Puerto Escondido. We bring the fire, premium ingredients, and unforgettable experience.">
+<title>Grill Daddy PXM | Premium Villa Grill Catering | Puerto Escondido</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="Luxury grill catering in Puerto Escondido. We bring the grill, premium ingredients, chef, service and unforgettable experience directly to your villa or private event.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
-    --bg:#0b0b0b;
+    --bg:#090909;
     --card:#121212;
-    --gold:#d9a441;
-    --gold-light:#f2c36d;
+    --orange:#e96b18;
+    --orange-light:#ff8a3c;
     --white:#ffffff;
-    --muted:#a5a5a5;
+    --muted:#b5b5b5;
     --border:rgba(255,255,255,.08);
-    --radius:24px;
-    --shadow:0 30px 80px rgba(0,0,0,.45);
 }
 
 *{
@@ -34,9 +37,14 @@ html{
 
 body{
     font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--white);
+    background:#090909;
+    color:white;
     overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
 }
 
 .container{
@@ -44,15 +52,18 @@ body{
     margin:auto;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
     position:fixed;
     top:0;
+    left:0;
     width:100%;
     z-index:1000;
-    backdrop-filter:blur(18px);
-    background:rgba(10,10,10,.75);
+
+    background:rgba(8,8,8,.75);
+    backdrop-filter:blur(20px);
+
     border-bottom:1px solid rgba(255,255,255,.05);
 }
 
@@ -60,31 +71,42 @@ nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 0;
+    padding:14px 0;
 }
 
-.logo{
-    font-size:1.4rem;
-    font-weight:800;
-    letter-spacing:-0.04em;
+.brand{
+    display:flex;
+    align-items:center;
 }
 
-.logo span{
-    color:var(--gold);
+.brand img{
+    height:74px;
+    width:auto;
 }
 
-.nav-cta{
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:32px;
+}
+
+.nav-links a{
+    color:white;
     text-decoration:none;
-    color:#000;
-    background:var(--gold);
-    padding:12px 20px;
-    border-radius:999px;
-    font-weight:700;
+    font-weight:500;
     transition:.3s;
 }
 
-.nav-cta:hover{
-    transform:translateY(-2px);
+.nav-links a:hover{
+    color:var(--orange);
+}
+
+.nav-cta{
+    background:var(--orange);
+    color:black !important;
+    padding:14px 24px;
+    border-radius:999px;
+    font-weight:700 !important;
 }
 
 /* HERO */
@@ -94,6 +116,7 @@ nav{
     position:relative;
     display:flex;
     align-items:center;
+    padding-top:120px;
     overflow:hidden;
 }
 
@@ -101,92 +124,128 @@ nav{
     content:"";
     position:absolute;
     inset:0;
+
     background:
     linear-gradient(
         rgba(0,0,0,.55),
-        rgba(0,0,0,.75)
+        rgba(0,0,0,.78)
     ),
     url('/images/hero.jpg');
+
     background-size:cover;
     background-position:center;
+}
+
+.hero-watermark{
+    position:absolute;
+    right:-150px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:800px;
+    height:800px;
+
+    background:url('/images/logo.png');
+    background-repeat:no-repeat;
+    background-size:contain;
+
+    opacity:.04;
+    pointer-events:none;
+    z-index:1;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-    max-width:800px;
+    max-width:760px;
+}
+
+.hero-logo{
+    margin-bottom:30px;
+}
+
+.hero-logo img{
+    width:170px;
+    filter:drop-shadow(0 20px 50px rgba(0,0,0,.45));
 }
 
 .badge{
     display:inline-flex;
-    gap:10px;
     align-items:center;
+    gap:10px;
+
     background:rgba(255,255,255,.08);
+
     border:1px solid rgba(255,255,255,.08);
-    padding:10px 16px;
+
+    padding:12px 18px;
     border-radius:999px;
-    margin-bottom:24px;
-    font-size:.9rem;
+
+    margin-bottom:28px;
 }
 
 .hero h1{
-    font-size:clamp(3rem,7vw,6rem);
-    line-height:.95;
+    font-size:clamp(3.5rem,7vw,6.5rem);
+    line-height:.92;
     letter-spacing:-0.05em;
     margin-bottom:24px;
 }
 
 .hero h1 span{
-    color:var(--gold);
+    color:var(--orange);
 }
 
 .hero p{
-    font-size:1.25rem;
     color:#d0d0d0;
-    line-height:1.7;
-    max-width:700px;
+    font-size:1.25rem;
+    line-height:1.8;
 }
 
-.hero-actions{
+.hero-buttons{
     display:flex;
     gap:16px;
-    margin-top:36px;
+    margin-top:40px;
     flex-wrap:wrap;
 }
 
 .btn{
     display:inline-flex;
-    align-items:center;
     justify-content:center;
-    padding:16px 28px;
-    border-radius:999px;
+    align-items:center;
+
     text-decoration:none;
+
+    padding:16px 30px;
+
+    border-radius:999px;
+
     font-weight:700;
+
     transition:.3s;
-}
-
-.btn-primary{
-    background:var(--gold);
-    color:#000;
-}
-
-.btn-secondary{
-    border:1px solid rgba(255,255,255,.15);
-    color:#fff;
 }
 
 .btn:hover{
     transform:translateY(-3px);
 }
 
-/* SECTIONS */
+.btn-primary{
+    background:var(--orange);
+    color:black;
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+}
+
+/* SECTION */
 
 section{
-    padding:110px 0;
+    padding:120px 0;
 }
 
 .section-title{
-    font-size:clamp(2rem,5vw,4rem);
+    font-size:clamp(2.4rem,5vw,4.5rem);
     line-height:1;
     letter-spacing:-0.04em;
     margin-bottom:20px;
@@ -194,9 +253,8 @@ section{
 
 .section-subtitle{
     color:var(--muted);
-    max-width:700px;
-    line-height:1.8;
-    font-size:1.05rem;
+    line-height:1.9;
+    max-width:750px;
 }
 
 /* FEATURES */
@@ -208,19 +266,19 @@ section{
     margin-top:60px;
 }
 
-.card{
+.feature{
     background:var(--card);
     border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:32px;
+    padding:36px;
+    border-radius:24px;
 }
 
-.card h3{
+.feature h3{
     margin-bottom:14px;
-    font-size:1.3rem;
+    font-size:1.25rem;
 }
 
-.card p{
+.feature p{
     color:var(--muted);
     line-height:1.8;
 }
@@ -229,24 +287,22 @@ section{
 
 .experience{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
+    grid-template-columns:1fr 1fr;
     gap:60px;
     align-items:center;
 }
 
 .experience img{
-    width:100%;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
+    border-radius:24px;
 }
 
-.experience ul{
+.checklist{
     list-style:none;
-    margin-top:28px;
+    margin-top:30px;
 }
 
-.experience li{
-    padding:16px 0;
+.checklist li{
+    padding:18px 0;
     border-bottom:1px solid rgba(255,255,255,.08);
     color:#d8d8d8;
 }
@@ -269,80 +325,93 @@ section{
 
 /* MENU */
 
-.menu-wrap{
+.menu-section{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:40px;
+    gap:50px;
     align-items:center;
 }
 
-.menu-wrap img{
-    width:100%;
+.menu-section img{
     border-radius:24px;
-    box-shadow:var(--shadow);
 }
 
 .menu-card{
     background:var(--card);
     border:1px solid var(--border);
-    padding:40px;
     border-radius:24px;
+    padding:50px;
 }
 
 .menu-card h3{
     font-size:2rem;
-    margin-bottom:16px;
+    margin-bottom:20px;
 }
 
 .menu-card p{
     color:var(--muted);
-    line-height:1.8;
+    line-height:1.9;
     margin-bottom:30px;
 }
 
 /* CTA */
 
-.cta{
-    text-align:center;
-    padding:120px 0;
-}
-
 .cta-box{
-    background:linear-gradient(135deg,#151515,#1f1f1f);
+    background:linear-gradient(
+        135deg,
+        #131313,
+        #1b1b1b
+    );
+
     border:1px solid rgba(255,255,255,.08);
+
     border-radius:32px;
-    padding:70px 30px;
+
+    padding:80px 40px;
+
+    text-align:center;
 }
 
-.cta h2{
+.cta-box h2{
     font-size:clamp(2.5rem,5vw,4.5rem);
     line-height:1;
-    letter-spacing:-0.04em;
     margin-bottom:20px;
 }
 
-.cta p{
-    color:var(--muted);
+.cta-box p{
     max-width:700px;
     margin:auto;
+    color:var(--muted);
     line-height:1.8;
+}
+
+.cta-actions{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:40px;
+    flex-wrap:wrap;
 }
 
 /* FOOTER */
 
 footer{
+    padding:60px 0;
     border-top:1px solid rgba(255,255,255,.06);
-    padding:40px 0;
 }
 
 .footer-inner{
     display:flex;
-    justify-content:space-between;
+    flex-direction:column;
     align-items:center;
     gap:20px;
 }
 
-.footer-inner p{
+.footer-logo{
+    width:120px;
+}
+
+.footer-text{
     color:var(--muted);
 }
 
@@ -350,51 +419,59 @@ footer{
 
 @media(max-width:900px){
 
-.features{
-    grid-template-columns:1fr;
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .experience,
+    .menu-section{
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-watermark{
+        width:400px;
+        height:400px;
+    }
 }
 
-.experience,
-.menu-wrap{
-    grid-template-columns:1fr;
-}
+@media(max-width:768px){
 
-.gallery{
-    grid-template-columns:1fr 1fr;
-}
+    .nav-links a:not(.nav-cta){
+        display:none;
+    }
 
-.hero{
-    padding-top:120px;
-}
+    .brand img{
+        height:58px;
+    }
 
-.hero-actions{
-    flex-direction:column;
-}
+    .hero-logo img{
+        width:130px;
+    }
 
-.btn{
-    width:100%;
-}
-
-.footer-inner{
-    flex-direction:column;
-    text-align:center;
-}
+    .hero h1{
+        font-size:3.8rem;
+    }
 }
 
 @media(max-width:600px){
 
-.gallery{
-    grid-template-columns:1fr;
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
 }
 
-.hero h1{
-    font-size:3.5rem;
-}
-
-.section-title{
-    font-size:2.3rem;
-}
-}
 </style>
 </head>
 
@@ -402,34 +479,50 @@ footer{
 
 <nav>
     <div class="container nav-inner">
-        <div class="logo">GRILL <span>DADDY</span></div>
 
-        <a href="#book" class="nav-cta">
-            Book Your Event
+        <a href="#" class="brand">
+            <img src="/images/logo.png" alt="Grill Daddy">
         </a>
+
+        <div class="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#menu">Menu</a>
+
+            <a href="#book" class="nav-cta">
+                Book Your Event
+            </a>
+        </div>
+
     </div>
 </nav>
 
 <header class="hero">
+
+    <div class="hero-watermark"></div>
+
     <div class="container hero-content">
 
+        <div class="hero-logo">
+            <img src="/images/logo.png" alt="Grill Daddy">
+        </div>
+
         <div class="badge">
-            🔥 Puerto Escondido Premium Grill Catering
+            🔥 Puerto Escondido Luxury Grill Catering
         </div>
 
         <h1>
-            We Bring The Fire.<br>
-            You Enjoy The <span>Party.</span>
+            Private Villa BBQs.<br>
+            Elevated By <span>Fire.</span>
         </h1>
 
         <p>
-            Luxury grill catering for villas, birthdays, bachelor parties,
-            weddings, family gatherings, retreats, and private events in
-            Puerto Escondido. Grill Daddy transforms your location into an
-            unforgettable live-fire dining experience.
+            Luxury grill catering for villas, birthdays, weddings,
+            retreats and unforgettable celebrations in Puerto Escondido.
+            We bring the grill, premium ingredients, chef and complete
+            experience directly to you.
         </p>
 
-        <div class="hero-actions">
+        <div class="hero-buttons">
             <a href="#book" class="btn btn-primary">
                 Get a Quote
             </a>
@@ -440,136 +533,137 @@ footer{
         </div>
 
     </div>
+
 </header>
 
 <section>
+
     <div class="container">
 
         <h2 class="section-title">
-            More Than Catering.
+            More Than Catering
         </h2>
 
         <p class="section-subtitle">
-            We arrive at your villa or event location with everything needed
-            for an elevated live-fire experience. Premium ingredients,
-            professional service, beautiful presentation, zero stress.
+            Grill Daddy is a live-fire dining experience designed for
+            luxury villas, private events and unforgettable nights with
+            friends and family.
         </p>
 
         <div class="features">
 
-            <div class="card">
-                <h3>🔥 Live Grill Experience</h3>
-                <p>
-                    Guests enjoy the atmosphere, aroma, and excitement of food
-                    prepared fresh over fire.
-                </p>
+            <div class="feature">
+                <h3>🔥 Live Fire Cooking</h3>
+                <p>Freshly grilled in front of your guests for maximum atmosphere and flavor.</p>
             </div>
 
-            <div class="card">
+            <div class="feature">
                 <h3>🥩 Premium Ingredients</h3>
-                <p>
-                    High-quality meats, seafood, vegetables, and house-made
-                    sides selected for exceptional flavor.
-                </p>
+                <p>High-quality meats, seafood and sides selected to impress every guest.</p>
             </div>
 
-            <div class="card">
-                <h3>🏝 Villa & Event Specialists</h3>
-                <p>
-                    Perfect for luxury villas, weddings, birthdays, retreats,
-                    celebrations, and private gatherings.
-                </p>
+            <div class="feature">
+                <h3>🏝 Villa Specialists</h3>
+                <p>Perfect for luxury villas, bachelor parties, birthdays, weddings and retreats.</p>
             </div>
 
         </div>
 
     </div>
+
 </section>
 
-<section>
+<section id="experience">
+
     <div class="container experience">
 
         <div>
+
             <h2 class="section-title">
                 The Grill Daddy Experience
             </h2>
 
             <p class="section-subtitle">
-                You choose the location. We bring the grill, ingredients,
-                setup, cooking, service, and cleanup.
+                Relax and enjoy your guests while we handle everything from setup to cleanup.
             </p>
 
-            <ul>
+            <ul class="checklist">
                 <li>✓ Complete setup and preparation</li>
-                <li>✓ Professional on-site grilling</li>
-                <li>✓ Premium presentation</li>
+                <li>✓ Professional grill chef on-site</li>
+                <li>✓ Beautiful food presentation</li>
                 <li>✓ Perfect for groups of all sizes</li>
                 <li>✓ No cleanup required</li>
             </ul>
+
         </div>
 
-        <img src="/images/food-1.jpg" alt="Premium grilled food">
+        <img src="/images/food-1.jpg" alt="Grill Daddy Experience">
 
     </div>
+
 </section>
 
 <section>
+
     <div class="container">
 
         <h2 class="section-title">
-            Food That Gets People Talking
+            Food Worth Gathering For
         </h2>
 
         <div class="gallery">
-            <img src="/images/food-1.jpg" alt="">
-            <img src="/images/food-2.jpg" alt="">
-            <img src="/images/food-3.jpg" alt="">
-            <img src="/images/food-4.jpg" alt="">
+            <img src="/images/food-1.jpg">
+            <img src="/images/food-2.jpg">
+            <img src="/images/food-3.jpg">
+            <img src="/images/food-4.jpg">
         </div>
 
     </div>
+
 </section>
 
 <section id="menu">
-    <div class="container menu-wrap">
 
-        <img src="/images/menu.jpg" alt="Grill Daddy Menu">
+    <div class="container menu-section">
+
+        <img src="/images/menu.jpg" alt="Menu">
 
         <div class="menu-card">
-            <h3>Explore Our Menu</h3>
+
+            <h3>Explore The Menu</h3>
 
             <p>
-                From premium steaks and seafood to signature sides and
-                crowd-favorite grill selections, every menu is designed to
-                create a memorable experience.
+                Premium meats, seafood, signature sides and crowd favorites
+                designed to create an unforgettable experience.
             </p>
 
             <a href="/images/menu.jpg" target="_blank" class="btn btn-primary">
                 View Full Menu
             </a>
+
         </div>
 
     </div>
+
 </section>
 
-<section class="cta" id="book">
+<section id="book">
+
     <div class="container">
 
         <div class="cta-box">
 
             <h2>
-                Ready To Host An<br>
-                Unforgettable Event?
+                Ready To Host Something Amazing?
             </h2>
 
             <p>
-                Tell us your date, location, and guest count.
-                We'll create a premium grill experience tailored to your event.
+                Tell us your date, location and guest count.
+                We'll create the perfect Grill Daddy experience.
             </p>
 
-            <div style="margin-top:40px;display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+            <div class="cta-actions">
 
-                <!-- CHANGE THESE -->
                 <a href="https://wa.me/521234567890" class="btn btn-primary">
                     WhatsApp Us
                 </a>
@@ -583,20 +677,21 @@ footer{
         </div>
 
     </div>
+
 </section>
 
 <footer>
+
     <div class="container footer-inner">
 
-        <div class="logo">
-            GRILL <span>DADDY</span>
+        <img src="/images/logo.png" alt="Grill Daddy" class="footer-logo">
+
+        <div class="footer-text">
+            Premium Grill Catering • Puerto Escondido, Oaxaca
         </div>
 
-        <p>
-            Premium Grill Catering • Puerto Escondido, Oaxaca
-        </p>
-
     </div>
+
 </footer>
 
 </body>
